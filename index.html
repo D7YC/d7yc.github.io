@@ -1,1 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D7YC | Cybersecurity Portfolio</title>
+  <meta name="description" content="Cybersecurity portfolio and CTF writeups by D7YC." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
 
+  <div class="page-shell">
+    <aside class="sidebar-card">
+      <div class="avatar-wrap">
+        <div class="avatar-ring"></div>
+        <img
+          class="avatar"
+          src="https://avatars.githubusercontent.com/u/1?v=4"
+          alt="Profile picture"
+        />
+      </div>
+
+      <div class="profile-block">
+        <p class="tag">CYBERSECURITY PORTFOLIO</p>
+        <h1>D7YC</h1>
+        <p class="role">Cybersecurity Student</p>
+        <p class="intro">
+          I write CTF writeups, document learning progress, and build practical skills
+          in web exploitation, digital forensics, OSINT, and basic reverse engineering.
+        </p>
+      </div>
+
+      <div class="profile-meta">
+        <div class="meta-item">
+          <span class="meta-label">Focus</span>
+          <span class="meta-value">CTF Writeups</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Interests</span>
+          <span class="meta-value">Web / Forensics / OSINT</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Status</span>
+          <span class="meta-value">Learning & Building</span>
+        </div>
+      </div>
+
+      <div class="sidebar-actions">
+        <a href="#featured" class="btn btn-primary">View Featured Writeups</a>
+        <a href="writeups/index.html" class="btn btn-secondary">Browse All Writeups</a>
+      </div>
+
+      <div class="social-links">
+        <a href="https://github.com/D7YC" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:your-email@example.com">Email</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section class="hero-panel">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="hero-kicker">WELCOME TO MY PORTFOLIO</p>
+          <h2>CTF writeups, notes, and practical cybersecurity learning.</h2>
+          <p class="hero-text">
+            This site is where I collect selected writeups, challenge breakdowns,
+            and technical notes in a cleaner and more readable format than plain repositories.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="writeups/index.html" class="btn btn-primary">Open Writeups</a>
+            <a href="#categories" class="btn btn-secondary">See Categories</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" id="featured">
+        <div class="section-header">
+          <p class="section-tag">HIGHLIGHTS</p>
+          <h3>Featured Writeups</h3>
+          <p class="section-subtext">
+            Start here if you want to see the kind of work I enjoy the most.
+          </p>
+        </div>
+
+        <div class="card-grid">
+          <article class="content-card">
+            <span class="card-type">Forensics</span>
+            <h4>Windows Event Log Investigation</h4>
+            <p>
+              Basic analysis workflow for reviewing suspicious activity using logs,
+              timestamps, and host artifacts.
+            </p>
+            <a href="writeups/index.html">Read more →</a>
+          </article>
+
+          <article class="content-card">
+            <span class="card-type">Web</span>
+            <h4>SQL Injection Beginner Walkthrough</h4>
+            <p>
+              A simple breakdown of how I approached a basic SQLi challenge,
+              including payload testing and reasoning.
+            </p>
+            <a href="writeups/index.html">Read more →</a>
+          </article>
+
+          <article class="content-card">
+            <span class="card-type">OSINT</span>
+            <h4>Image Clues and Metadata Trail</h4>
+            <p>
+              A short writeup on extracting small clues from images, profiles,
+              and public information during an OSINT task.
+            </p>
+            <a href="writeups/index.html">Read more →</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section" id="categories">
+        <div class="section-header">
+          <p class="section-tag">STRUCTURE</p>
+          <h3>Writeup Categories</h3>
+          <p class="section-subtext">
+            My writeups will be grouped to make browsing easier.
+          </p>
+        </div>
+
+        <div class="category-grid">
+          <a class="category-card" href="writeups/index.html">
+            <span class="category-number">01</span>
+            <h4>Web Exploitation</h4>
+            <p>XSS, SQLi, auth flaws, parameter tampering, and web challenge notes.</p>
+          </a>
+
+          <a class="category-card" href="writeups/index.html">
+            <span class="category-number">02</span>
+            <h4>Digital Forensics</h4>
+            <p>Disk image analysis, event logs, timeline review, and artifact extraction.</p>
+          </a>
+
+          <a class="category-card" href="writeups/index.html">
+            <span class="category-number">03</span>
+            <h4>OSINT</h4>
+            <p>Public-source investigation, metadata clues, usernames, and image tracing.</p>
+          </a>
+
+          <a class="category-card" href="writeups/index.html">
+            <span class="category-number">04</span>
+            <h4>Crypto / Misc</h4>
+            <p>Small decoding, scripting, puzzle-based, and miscellaneous CTF challenges.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-header">
+          <p class="section-tag">ABOUT</p>
+          <h3>What this site is for</h3>
+        </div>
+
+        <div class="about-panel">
+          <p>
+            I made this portfolio to present my CTF learning in a cleaner way.
+            Instead of showing only raw GitHub repositories, this website helps me
+            organize writeups, explain my thought process, and show what I learned
+            from each challenge.
+          </p>
+          <p>
+            Over time, I plan to keep adding more writeups, notes, and selected
+            technical mini-projects related to cybersecurity.
+          </p>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p>© 2026 D7YC • Built with GitHub Pages</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
