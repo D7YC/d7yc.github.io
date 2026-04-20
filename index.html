@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body class="home-page">
-  <!-- Fixed header stays subtle so the hero still feels clean -->
+  <!-- Subtle fixed header -->
   <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a class="brand" href="/">Ong Ping Xiang</a>
@@ -25,54 +25,56 @@
       <nav class="header-nav" aria-label="Primary navigation">
         <a href="#explore">Explore</a>
         <a href="#recent">Recent</a>
-        <a href="/ctf-writeups/">CTF Archive</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Hero: first impression focuses on your name and the wallpaper -->
+    <!-- Hero -->
     <section class="hero" id="top">
       <div class="hero-overlay"></div>
       <div class="hero-grain"></div>
 
       <div class="container hero-content">
-        <p class="eyebrow reveal">Personal cybersecurity archive</p>
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Personal cybersecurity archive</p>
 
-        <h1 class="hero-title reveal reveal-delay-1">
-          <span>Ong</span>
-          <span>Ping Xiang</span>
-        </h1>
+          <h1 class="hero-title reveal reveal-delay-1">
+            <span>Ong Ping</span>
+            <span>Xiang</span>
+          </h1>
 
-        <p class="hero-role reveal reveal-delay-2">Cybersecurity student</p>
+          <p class="hero-role reveal reveal-delay-2">Cybersecurity student</p>
 
-        <p class="hero-intro reveal reveal-delay-3">
-          This is my personal cybersecurity archive — a place where I document how I learn,
-          investigate, solve, and grow. Most of what lives here begins with CTF writeups,
-          then expands into notes, breakdowns, and reflections that shape how I work.
-        </p>
+          <p class="hero-intro reveal reveal-delay-3">
+            This is my personal cybersecurity archive — a place where I document how I
+            learn, investigate, solve, and grow. Most of what lives here begins with CTF
+            writeups, then expands into notes, breakdowns, and reflections that shape how I work.
+          </p>
 
-        <div class="hero-scroll reveal reveal-delay-4" aria-hidden="true">
-          <span>Scroll to enter the archive</span>
-          <span class="hero-scroll-line"></span>
+          <div class="hero-scroll reveal reveal-delay-4" aria-hidden="true">
+            <span>Scroll to explore</span>
+            <span class="hero-scroll-line"></span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Category navigation / top-level archive structure -->
+    <!-- Explore -->
     <section class="archive-nav-section" id="explore">
       <div class="container">
         <div class="section-heading reveal">
           <p class="eyebrow">Explore</p>
-          <h2>Browse the archive by section</h2>
+          <h2>Browse the portfolio by section</h2>
           <p class="section-copy">
-            The site is structured to grow over time. Right now, the main active section is
-            CTF Writeups, while the other sections are already in place for future expansion.
+            This portfolio records my journey in cybersecurity. It starts with CTF writeups
+            for now, and over time it will grow into notes, breakdowns, and reflections that
+            capture how I learn.
           </p>
         </div>
 
         <div class="archive-switcher reveal reveal-delay-1">
-          <div class="tab-row" role="tablist" aria-label="Archive sections">
+          <div class="tab-row" role="tablist" aria-label="Portfolio sections">
             <button
               class="tab-button is-active"
               type="button"
@@ -115,80 +117,115 @@
           </div>
 
           <div class="tab-panels">
-            <!-- Active panel -->
+            <!-- Active section -->
             <section class="tab-panel is-active" data-tab-panel="ctf">
               <div class="tab-panel-grid">
                 <div class="tab-panel-copy">
-                  <p class="panel-label">Active section</p>
+                  <p class="panel-label">Current focus</p>
                   <h3>CTF Writeups</h3>
                   <p>
-                    This is currently the most developed part of the site. The archive is
-                    organized to support a clean path from category, to competition, to
-                    individual writeup pages.
+                    This is the main active part of the site right now. The structure is set up
+                    so each writeup can sit cleanly inside its category, competition, and challenge page.
                   </p>
 
-                  <a class="text-link" href="/ctf-writeups/">Open the CTF archive →</a>
+                  <a class="text-link" href="/ctf-writeups/">Open the CTF section →</a>
                 </div>
 
-                <div class="archive-structure-card">
-                  <p class="panel-label">Current structure</p>
-                  <ul class="archive-tree">
+                <div class="competition-list-card">
+                  <p class="panel-label">Recent competitions</p>
+
+                  <ul class="competition-list">
                     <li>
-                      <span>CTF Writeups</span>
-                      <ul>
-                        <li>
-                          <span>Forensics</span>
-                          <ul>
-                            <li>
-                              <span>Midnight Mountain Mini Forensics</span>
-                              <ul>
-                                <li><span>Event Log Timeline</span></li>
-                                <li><span>Browser Trail Review</span></li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
+                      <a href="/ctf-writeups/forensics/midnight-mountain-mini-forensics/">
+                        Midnight Mountain Mini Forensics
+                      </a>
+                      <span class="competition-pill">Forensics</span>
                     </li>
                   </ul>
+
+                  <p class="competition-note">
+                    New competition pages will appear here as more writeups are published.
+                  </p>
                 </div>
               </div>
             </section>
 
-            <!-- Future sections -->
+            <!-- Blurred future sections -->
             <section class="tab-panel" data-tab-panel="notes">
-              <div class="future-panel">
-                <p class="panel-label">Prepared for later</p>
-                <h3>Learning Notes</h3>
-                <p>
-                  This section is reserved for study notes, distilled lessons, tool summaries,
-                  and reusable references that come out of practice.
-                </p>
-                <a class="text-link" href="/learning-notes/">View placeholder page →</a>
+              <div class="coming-soon-panel">
+                <div class="coming-soon-preview">
+                  <div class="ghost-card">
+                    <p class="panel-label">Planned</p>
+                    <h3>Learning Notes</h3>
+                    <p>Tool summaries, distilled lessons, and useful references from practice.</p>
+                  </div>
+                  <div class="ghost-card">
+                    <p class="panel-label">Planned</p>
+                    <h3>Study Pages</h3>
+                    <p>Organized notes that sit outside a single CTF or competition.</p>
+                  </div>
+                </div>
+
+                <div class="coming-soon-overlay-card">
+                  <p class="panel-label">Coming soon</p>
+                  <h3>Learning Notes</h3>
+                  <p>
+                    This section is prepared and will be opened properly once there is enough
+                    material to publish.
+                  </p>
+                </div>
               </div>
             </section>
 
             <section class="tab-panel" data-tab-panel="breakdowns">
-              <div class="future-panel">
-                <p class="panel-label">Prepared for later</p>
-                <h3>Challenge Breakdowns</h3>
-                <p>
-                  Use this section for challenge design notes, solve-path analysis, and
-                  structured post-challenge summaries that do not fit a standard writeup.
-                </p>
-                <a class="text-link" href="/challenge-breakdowns/">View placeholder page →</a>
+              <div class="coming-soon-panel">
+                <div class="coming-soon-preview">
+                  <div class="ghost-card">
+                    <p class="panel-label">Planned</p>
+                    <h3>Challenge Breakdowns</h3>
+                    <p>Structured post-challenge analysis, solve paths, and design notes.</p>
+                  </div>
+                  <div class="ghost-card">
+                    <p class="panel-label">Planned</p>
+                    <h3>Post-Competition Notes</h3>
+                    <p>Cleaner analytical summaries that do not fit a standard writeup.</p>
+                  </div>
+                </div>
+
+                <div class="coming-soon-overlay-card">
+                  <p class="panel-label">Coming soon</p>
+                  <h3>Challenge Breakdowns</h3>
+                  <p>
+                    This section will later hold deeper analysis of challenges, solve paths,
+                    and lessons worth preserving separately.
+                  </p>
+                </div>
               </div>
             </section>
 
             <section class="tab-panel" data-tab-panel="reflections">
-              <div class="future-panel">
-                <p class="panel-label">Prepared for later</p>
-                <h3>Blog / Reflections</h3>
-                <p>
-                  This can later hold short reflections on learning, competitions, internship
-                  growth, or how your thinking changes over time.
-                </p>
-                <a class="text-link" href="/reflections/">View placeholder page →</a>
+              <div class="coming-soon-panel">
+                <div class="coming-soon-preview">
+                  <div class="ghost-card">
+                    <p class="panel-label">Planned</p>
+                    <h3>Reflections</h3>
+                    <p>Short notes on growth, competitions, and learning over time.</p>
+                  </div>
+                  <div class="ghost-card">
+                    <p class="panel-label">Planned</p>
+                    <h3>Personal Posts</h3>
+                    <p>Broader thoughts on progress and experience as the portfolio develops.</p>
+                  </div>
+                </div>
+
+                <div class="coming-soon-overlay-card">
+                  <p class="panel-label">Coming soon</p>
+                  <h3>Blog / Reflections</h3>
+                  <p>
+                    This section is reserved for short reflections and more personal writing
+                    once the core writeup archive is more established.
+                  </p>
+                </div>
               </div>
             </section>
           </div>
@@ -196,7 +233,7 @@
       </div>
     </section>
 
-    <!-- Recent entries section -->
+    <!-- Recent writeups only -->
     <section class="recent-section" id="recent">
       <div class="container">
         <div class="section-heading reveal">
@@ -204,12 +241,12 @@
           <h2>Current CTF writeups</h2>
           <p class="section-copy">
             The homepage stays selective. Instead of showing everything, it surfaces a small
-            number of recent entries while the full archive remains organized underneath.
+            number of recent writeups while the full section remains organized underneath.
           </p>
         </div>
 
-        <div class="recent-grid">
-          <article class="entry-card entry-card-feature reveal reveal-delay-1">
+        <div class="recent-grid recent-grid-two">
+          <article class="entry-card reveal reveal-delay-1">
             <div class="entry-meta">
               <span>CTF Writeups</span>
               <span>Forensics</span>
@@ -219,7 +256,7 @@
 
             <p>
               A sample forensics writeup page that demonstrates how a single challenge can be
-              documented clearly inside the archive structure.
+              documented clearly inside the portfolio structure.
             </p>
 
             <div class="entry-footer">
@@ -239,8 +276,8 @@
             <h3>Browser Trail Review</h3>
 
             <p>
-              A second sample entry showing how another challenge from the same competition
-              can sit beside the first one without cluttering the homepage.
+              A second sample entry showing how another challenge from the same competition can
+              sit beside the first one without cluttering the homepage.
             </p>
 
             <div class="entry-footer">
@@ -250,48 +287,10 @@
               </a>
             </div>
           </article>
-
-          <article class="entry-card reveal reveal-delay-3">
-            <div class="entry-meta">
-              <span>Competition</span>
-              <span>Archive page</span>
-            </div>
-
-            <h3>Midnight Mountain Mini Forensics</h3>
-
-            <p>
-              The competition landing page groups related challenge writeups together, making
-              the archive easier to expand as more events are added later.
-            </p>
-
-            <div class="entry-footer">
-              <span class="entry-subtle">Competition index</span>
-              <a class="text-link" href="/ctf-writeups/forensics/midnight-mountain-mini-forensics/">
-                View competition →
-              </a>
-            </div>
-          </article>
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <p class="footer-name">Ong Ping Xiang</p>
-        <p class="footer-copy">
-          Personal cybersecurity archive built with GitHub Pages.
-        </p>
-      </div>
-
-      <div class="footer-links">
-        <a href="/ctf-writeups/">CTF Writeups</a>
-        <a href="/learning-notes/">Learning Notes</a>
-        <a href="/reflections/">Reflections</a>
-      </div>
-    </div>
-  </footer>
 
   <script src="/assets/js/main.js"></script>
 </body>
