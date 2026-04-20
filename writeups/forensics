@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D7YC | Forensics Archive</title>
+  <meta name="description" content="Digital forensics writeups and notes by D7YC." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="archive-page">
+  <div class="noise"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
+
+  <header class="topbar">
+    <a href="/" class="brand">D7YC</a>
+    <nav class="topnav">
+      <a href="/">Home</a>
+      <a href="/writeups/">Archive</a>
+    </nav>
+  </header>
+
+  <main class="section-shell">
+    <div class="archive-hero-panel reveal show">
+      <a href="/writeups/" class="back-link">← Back to archive</a>
+      <p class="eyebrow">Category 01</p>
+      <h1>Forensics</h1>
+      <p>
+        This is currently the strongest and most active section of the archive. It will
+        hold writeups involving host artifacts, event logs, browser evidence, deleted
+        files, and forensic investigation workflows.
+      </p>
+    </div>
+
+    <section class="section" style="padding-top:0;">
+      <div class="section-heading reveal show">
+        <p class="eyebrow">Entries</p>
+        <h2>Current casefiles</h2>
+      </div>
+
+      <div class="entries-grid">
+        <article class="entry-card reveal show">
+          <div class="meta-line">
+            <span class="entry-label">Casefile F-001</span>
+            <span class="status-pill">Placeholder</span>
+          </div>
+          <h3>Windows Event Log Investigation</h3>
+          <p>
+            A placeholder page for a future writeup focused on suspicious activity
+            reconstruction using event logs and timestamps.
+          </p>
+          <div class="entry-links">
+            <a class="text-link" href="#">Add full writeup later →</a>
+          </div>
+        </article>
+
+        <article class="entry-card reveal show">
+          <div class="meta-line">
+            <span class="entry-label">Casefile F-002</span>
+            <span class="status-pill">Placeholder</span>
+          </div>
+          <h3>Deleted File Recovery Notes</h3>
+          <p>
+            Reserved for notes or a writeup covering deleted artifacts, recovered files,
+            and evidence preservation steps.
+          </p>
+          <div class="entry-links">
+            <a class="text-link" href="#">Add full writeup later →</a>
+          </div>
+        </article>
+
+        <article class="entry-card reveal show">
+          <div class="meta-line">
+            <span class="entry-label">Casefile F-003</span>
+            <span class="status-pill">Placeholder</span>
+          </div>
+          <h3>Browser Artifact Review</h3>
+          <p>
+            A future entry for web history, downloads, cached evidence, and browsing traces
+            useful in host-based forensic analysis.
+          </p>
+          <div class="entry-links">
+            <a class="text-link" href="#">Add full writeup later →</a>
+          </div>
+        </article>
+
+        <article class="entry-card reveal show">
+          <div class="meta-line">
+            <span class="entry-label">Casefile F-004</span>
+            <span class="status-pill">Reference</span>
+          </div>
+          <h3>Investigation Workflow Template</h3>
+          <p>
+            A template category entry for documenting the thought process, timeline
+            reconstruction, and evidence-handling habits used during investigations.
+          </p>
+          <div class="entry-links">
+            <a class="text-link" href="/writeups/notes.html">See related notes →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> D7YC • Forensics Archive</p>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
