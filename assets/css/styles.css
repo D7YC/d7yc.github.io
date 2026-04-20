@@ -1,7 +1,7 @@
 /* =========================================================
    GLOBAL TOKENS
-   The palette is pulled toward the wallpaper:
-   warm peach sky, muted rose, charcoal, and soft ivory.
+   Palette is based on fuji.jpg:
+   warm peach sky, muted rose, charcoal, and soft ivory
    ========================================================= */
 
 :root {
@@ -141,34 +141,34 @@ select {
 .hero {
   position: relative;
   min-height: 100svh;
-  display: flex;
-  align-items: flex-end;
   overflow: clip;
+  background-color: #09080d;
   background-image:
     linear-gradient(
       90deg,
-      rgba(9, 9, 13, 0.88) 0%,
-      rgba(9, 9, 13, 0.72) 30%,
-      rgba(9, 9, 13, 0.32) 58%,
-      rgba(9, 9, 13, 0.48) 100%
+      rgba(9, 9, 13, 0.82) 0%,
+      rgba(9, 9, 13, 0.58) 28%,
+      rgba(9, 9, 13, 0.22) 55%,
+      rgba(9, 9, 13, 0.42) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(9, 9, 13, 0.1) 0%,
-      rgba(9, 9, 13, 0.25) 55%,
-      rgba(9, 9, 13, 0.88) 100%
+      rgba(9, 9, 13, 0.12) 0%,
+      rgba(9, 9, 13, 0.32) 62%,
+      rgba(9, 9, 13, 0.9) 100%
     ),
     url("/assets/images/fuji.jpg");
-  background-size: cover;
+  background-size: 100% auto;
   background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 76% 56%, rgba(244, 193, 169, 0.18), transparent 18%),
-    radial-gradient(circle at 36% 22%, rgba(226, 140, 115, 0.09), transparent 22%);
+    radial-gradient(circle at 74% 58%, rgba(244, 193, 169, 0.14), transparent 18%),
+    radial-gradient(circle at 32% 22%, rgba(226, 140, 115, 0.08), transparent 22%);
   pointer-events: none;
 }
 
@@ -187,9 +187,16 @@ select {
 .hero-content {
   position: relative;
   z-index: 2;
-  width: 100%;
-  padding-top: 120px;
-  padding-bottom: 12vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-top: 96px;
+  padding-bottom: 72px;
+}
+
+.hero-copy {
+  max-width: min(760px, 62vw);
+  margin-left: clamp(16px, 6vw, 88px);
 }
 
 .eyebrow {
@@ -203,12 +210,11 @@ select {
 .hero-title {
   margin: 0;
   font-family: var(--display-font);
-  font-size: clamp(4.5rem, 12vw, 8.8rem);
-  line-height: 0.86;
+  font-size: clamp(5.2rem, 10vw, 8.8rem);
+  line-height: 0.9;
   letter-spacing: -0.045em;
   color: var(--text-strong);
-  max-width: 9ch;
-  text-wrap: balance;
+  max-width: none;
 }
 
 .hero-title span {
@@ -271,10 +277,6 @@ select {
   position: relative;
   z-index: 3;
   padding: 110px 0;
-}
-
-.archive-nav-section {
-  margin-top: -64px;
 }
 
 .section-heading {
@@ -340,7 +342,7 @@ select {
 
 .tab-panel {
   display: none;
-  min-height: 290px;
+  min-height: 320px;
 }
 
 .tab-panel.is-active {
@@ -354,8 +356,10 @@ select {
 }
 
 .tab-panel-copy,
-.archive-structure-card,
-.future-panel {
+.competition-list-card,
+.future-panel,
+.ghost-card,
+.coming-soon-overlay-card {
   height: 100%;
   padding: 26px;
   border-radius: var(--radius-lg);
@@ -366,8 +370,10 @@ select {
 }
 
 .tab-panel-copy h3,
-.archive-structure-card h3,
-.future-panel h3 {
+.competition-list-card h3,
+.future-panel h3,
+.ghost-card h3,
+.coming-soon-overlay-card h3 {
   margin: 0 0 10px;
   font-family: var(--display-font);
   font-size: 2rem;
@@ -376,8 +382,10 @@ select {
 }
 
 .tab-panel-copy p,
-.archive-structure-card p,
-.future-panel p {
+.competition-list-card p,
+.future-panel p,
+.ghost-card p,
+.coming-soon-overlay-card p {
   margin: 0;
   color: var(--text-soft);
 }
@@ -403,44 +411,87 @@ select {
   transform: translateX(2px);
 }
 
-.archive-tree,
-.archive-tree ul {
+/* Current competition list */
+.competition-list {
   list-style: none;
   margin: 0;
-  padding-left: 18px;
-}
-
-.archive-tree {
-  padding-left: 0;
-}
-
-.archive-tree li {
-  position: relative;
-  margin: 12px 0 0;
-  color: var(--text-soft);
-}
-
-.archive-tree li::before {
-  content: "";
-  position: absolute;
-  top: 13px;
-  left: -12px;
-  width: 8px;
-  height: 1px;
-  background: rgba(244, 193, 169, 0.26);
-}
-
-.archive-tree > li::before {
-  display: none;
-}
-
-.archive-tree span {
-  color: var(--text-main);
-}
-
-.future-panel {
+  padding: 0;
   display: grid;
-  align-content: start;
+  gap: 14px;
+}
+
+.competition-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(244, 193, 169, 0.08);
+}
+
+.competition-list a {
+  color: var(--text-main);
+  font-weight: 600;
+  transition: 180ms ease;
+}
+
+.competition-list a:hover {
+  color: var(--warm-100);
+}
+
+.competition-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 7px 10px;
+  background: rgba(244, 193, 169, 0.08);
+  border: 1px solid rgba(244, 193, 169, 0.12);
+  color: var(--warm-100);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.competition-note {
+  margin-top: 16px !important;
+  color: var(--text-muted) !important;
+}
+
+/* Coming soon blurred tabs */
+.coming-soon-panel {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line-soft);
+  background:
+    linear-gradient(180deg, rgba(22, 20, 26, 0.84), rgba(15, 14, 19, 0.88));
+  box-shadow: var(--shadow-md);
+}
+
+.coming-soon-preview {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding: 18px;
+  filter: blur(10px);
+  opacity: 0.46;
+  transform: scale(1.03);
+}
+
+.ghost-card {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.coming-soon-overlay-card {
+  position: relative;
+  z-index: 2;
+  width: min(520px, calc(100% - 36px));
+  margin: 18px;
+  background: rgba(14, 13, 19, 0.82);
 }
 
 /* =========================================================
@@ -449,15 +500,18 @@ select {
 
 .recent-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr;
   gap: 18px;
+}
+
+.recent-grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .entry-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 280px;
+  min-height: 380px;
   padding: 24px;
   border-radius: var(--radius-lg);
   background:
@@ -470,10 +524,6 @@ select {
 .entry-card:hover {
   transform: translateY(-4px);
   border-color: var(--line-strong);
-}
-
-.entry-card-feature {
-  min-height: 320px;
 }
 
 .entry-meta {
@@ -519,6 +569,7 @@ select {
 
 /* =========================================================
    FOOTER
+   Kept for subpages only. Homepage now has no footer markup.
    ========================================================= */
 
 .site-footer {
@@ -827,16 +878,24 @@ select {
 
 @media (max-width: 1000px) {
   .tab-panel-grid,
-  .recent-grid,
   .panel-grid,
   .track-grid,
   .competition-grid,
-  .article-grid {
+  .article-grid,
+  .recent-grid-two {
     grid-template-columns: 1fr;
   }
 
-  .archive-nav-section {
-    margin-top: 0;
+  .hero-copy {
+    max-width: min(760px, 78vw);
+    margin-left: clamp(12px, 4vw, 28px);
+  }
+}
+
+@media (max-aspect-ratio: 16/9), (max-width: 980px) {
+  .hero {
+    background-size: cover;
+    background-position: center center;
   }
 }
 
@@ -854,13 +913,17 @@ select {
   }
 
   .hero-content {
-    padding-top: 120px;
+    padding-top: 112px;
     padding-bottom: 72px;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+    margin-left: 0;
   }
 
   .hero-title {
     font-size: clamp(4rem, 18vw, 6rem);
-    max-width: 7ch;
   }
 
   .hero-role {
@@ -892,8 +955,16 @@ select {
   .writeup-intro,
   .prose,
   .archive-switcher,
-  .entry-card {
+  .entry-card,
+  .tab-panel-copy,
+  .competition-list-card,
+  .ghost-card,
+  .coming-soon-overlay-card {
     padding: 20px;
+  }
+
+  .coming-soon-preview {
+    grid-template-columns: 1fr;
   }
 
   .footer-inner {
@@ -912,12 +983,8 @@ select {
     flex-wrap: wrap;
   }
 
-  .hero {
-    background-position: 58% center;
-  }
-
   .hero-title {
-    font-size: clamp(3.4rem, 16vw, 5rem);
+    font-size: clamp(3.6rem, 16vw, 4.8rem);
   }
 
   .tab-row {
@@ -938,5 +1005,10 @@ select {
   .track-card h3,
   .competition-card h3 {
     font-size: 1.55rem;
+  }
+
+  .competition-list li {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
