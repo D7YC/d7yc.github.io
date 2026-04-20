@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body class="home-page">
-  <!-- Subtle fixed header -->
   <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a class="brand" href="/">Ong Ping Xiang</a>
@@ -30,7 +29,7 @@
   </header>
 
   <main>
-    <!-- Hero -->
+    <!-- HERO -->
     <section class="hero" id="top">
       <div class="hero-overlay"></div>
       <div class="hero-grain"></div>
@@ -60,7 +59,7 @@
       </div>
     </section>
 
-    <!-- Explore -->
+    <!-- EXPLORE -->
     <section class="archive-nav-section" id="explore">
       <div class="container">
         <div class="section-heading reveal">
@@ -117,114 +116,104 @@
           </div>
 
           <div class="tab-panels">
-            <!-- Active section -->
+            <!-- CTF -->
             <section class="tab-panel is-active" data-tab-panel="ctf">
-              <div class="tab-panel-grid">
-                <div class="tab-panel-copy">
-                  <p class="panel-label">Current focus</p>
+              <div class="section-card">
+                <div class="section-card-main">
+                  <p class="panel-label">Section Overview</p>
                   <h3>CTF Writeups</h3>
                   <p>
                     This is the main active part of the site right now. The structure is set up
                     so each writeup can sit cleanly inside its category, competition, and challenge page.
                   </p>
-
-                  <a class="text-link" href="/ctf-writeups/">Open the CTF section →</a>
+                  <a class="text-link" href="/ctf-writeups/">More →</a>
                 </div>
 
-                <div class="competition-list-card">
-                  <p class="panel-label">Recent competitions</p>
+                <div class="section-card-divider"></div>
 
+                <div class="section-card-bottom">
+                  <p class="panel-label">Recent Competitions</p>
                   <ul class="competition-list">
                     <li>
                       <a href="/ctf-writeups/forensics/midnight-mountain-mini-forensics/">
                         Midnight Mountain Mini Forensics
                       </a>
-                      <span class="competition-pill">Forensics</span>
                     </li>
                   </ul>
-
-                  <p class="competition-note">
-                    New competition pages will appear here as more writeups are published.
-                  </p>
                 </div>
               </div>
             </section>
 
-            <!-- Blurred future sections -->
+            <!-- NOTES -->
             <section class="tab-panel" data-tab-panel="notes">
-              <div class="coming-soon-panel">
-                <div class="coming-soon-preview">
-                  <div class="ghost-card">
-                    <p class="panel-label">Planned</p>
-                    <h3>Learning Notes</h3>
-                    <p>Tool summaries, distilled lessons, and useful references from practice.</p>
-                  </div>
-                  <div class="ghost-card">
-                    <p class="panel-label">Planned</p>
-                    <h3>Study Pages</h3>
-                    <p>Organized notes that sit outside a single CTF or competition.</p>
-                  </div>
-                </div>
-
-                <div class="coming-soon-overlay-card">
-                  <p class="panel-label">Coming soon</p>
+              <div class="section-card">
+                <div class="section-card-main">
+                  <p class="panel-label">Section Overview</p>
                   <h3>Learning Notes</h3>
                   <p>
-                    This section is prepared and will be opened properly once there is enough
-                    material to publish.
+                    Tool summaries, distilled lessons, and useful references from practice.
                   </p>
+                  <span class="disabled-link">Coming Soon</span>
+                </div>
+
+                <div class="section-card-divider"></div>
+
+                <div class="section-card-bottom">
+                  <p class="panel-label">Planned Topics</p>
+                  <ul class="competition-list muted-list">
+                    <li><span>Study pages and method notes</span></li>
+                    <li><span>Short references built from practice</span></li>
+                  </ul>
                 </div>
               </div>
             </section>
 
+            <!-- BREAKDOWNS -->
             <section class="tab-panel" data-tab-panel="breakdowns">
-              <div class="coming-soon-panel">
-                <div class="coming-soon-preview">
-                  <div class="ghost-card">
-                    <p class="panel-label">Planned</p>
-                    <h3>Challenge Breakdowns</h3>
-                    <p>Structured post-challenge analysis, solve paths, and design notes.</p>
-                  </div>
-                  <div class="ghost-card">
-                    <p class="panel-label">Planned</p>
-                    <h3>Post-Competition Notes</h3>
-                    <p>Cleaner analytical summaries that do not fit a standard writeup.</p>
-                  </div>
-                </div>
-
-                <div class="coming-soon-overlay-card">
-                  <p class="panel-label">Coming soon</p>
+              <div class="section-card">
+                <div class="section-card-main">
+                  <p class="panel-label">Section Overview</p>
                   <h3>Challenge Breakdowns</h3>
                   <p>
-                    This section will later hold deeper analysis of challenges, solve paths,
-                    and lessons worth preserving separately.
+                    Structured summaries, solve-path notes, and post-challenge analysis that
+                    sit outside a standard writeup.
                   </p>
+                  <span class="disabled-link">Coming Soon</span>
+                </div>
+
+                <div class="section-card-divider"></div>
+
+                <div class="section-card-bottom">
+                  <p class="panel-label">Planned Topics</p>
+                  <ul class="competition-list muted-list">
+                    <li><span>Solve-path analysis</span></li>
+                    <li><span>Challenge design notes</span></li>
+                  </ul>
                 </div>
               </div>
             </section>
 
+            <!-- REFLECTIONS -->
             <section class="tab-panel" data-tab-panel="reflections">
-              <div class="coming-soon-panel">
-                <div class="coming-soon-preview">
-                  <div class="ghost-card">
-                    <p class="panel-label">Planned</p>
-                    <h3>Reflections</h3>
-                    <p>Short notes on growth, competitions, and learning over time.</p>
-                  </div>
-                  <div class="ghost-card">
-                    <p class="panel-label">Planned</p>
-                    <h3>Personal Posts</h3>
-                    <p>Broader thoughts on progress and experience as the portfolio develops.</p>
-                  </div>
-                </div>
-
-                <div class="coming-soon-overlay-card">
-                  <p class="panel-label">Coming soon</p>
+              <div class="section-card">
+                <div class="section-card-main">
+                  <p class="panel-label">Section Overview</p>
                   <h3>Blog / Reflections</h3>
                   <p>
-                    This section is reserved for short reflections and more personal writing
-                    once the core writeup archive is more established.
+                    A quieter section for reflections, short posts, and notes on how my learning
+                    develops over time.
                   </p>
+                  <span class="disabled-link">Coming Soon</span>
+                </div>
+
+                <div class="section-card-divider"></div>
+
+                <div class="section-card-bottom">
+                  <p class="panel-label">Planned Topics</p>
+                  <ul class="competition-list muted-list">
+                    <li><span>Competition reflections</span></li>
+                    <li><span>Learning milestones</span></li>
+                  </ul>
                 </div>
               </div>
             </section>
@@ -233,7 +222,7 @@
       </div>
     </section>
 
-    <!-- Recent writeups only -->
+    <!-- RECENT -->
     <section class="recent-section" id="recent">
       <div class="container">
         <div class="section-heading reveal">
@@ -248,7 +237,6 @@
         <div class="recent-grid recent-grid-two">
           <article class="entry-card reveal reveal-delay-1">
             <div class="entry-meta">
-              <span>CTF Writeups</span>
               <span>Forensics</span>
             </div>
 
@@ -269,7 +257,6 @@
 
           <article class="entry-card reveal reveal-delay-2">
             <div class="entry-meta">
-              <span>CTF Writeups</span>
               <span>Forensics</span>
             </div>
 
