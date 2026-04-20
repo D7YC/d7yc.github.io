@@ -1,9 +1,3 @@
-/* =========================================================
-   GLOBAL TOKENS
-   Palette is based on fuji.jpg:
-   warm peach sky, muted rose, charcoal, and soft ivory
-   ========================================================= */
-
 :root {
   --bg-950: #0a0a0f;
   --bg-900: #111116;
@@ -23,7 +17,6 @@
   --line-soft: rgba(244, 193, 169, 0.14);
   --line-strong: rgba(244, 193, 169, 0.22);
   --panel: rgba(16, 15, 21, 0.74);
-  --panel-strong: rgba(14, 13, 19, 0.9);
 
   --shadow-lg: 0 22px 60px rgba(0, 0, 0, 0.26);
   --shadow-md: 0 14px 36px rgba(0, 0, 0, 0.18);
@@ -31,17 +24,13 @@
   --radius-xl: 28px;
   --radius-lg: 22px;
   --radius-md: 16px;
-  --radius-sm: 12px;
 
   --content-width: 1200px;
   --display-font: "Cormorant Garamond", serif;
   --body-font: "Inter", sans-serif;
 }
 
-/* =========================================================
-   RESET
-   ========================================================= */
-
+/* RESET */
 *,
 *::before,
 *::after {
@@ -86,10 +75,7 @@ select {
   margin-inline: auto;
 }
 
-/* =========================================================
-   HEADER
-   ========================================================= */
-
+/* HEADER */
 .site-header {
   position: fixed;
   inset: 0 0 auto 0;
@@ -134,10 +120,7 @@ select {
   color: var(--warm-100);
 }
 
-/* =========================================================
-   HERO
-   ========================================================= */
-
+/* HERO */
 .hero {
   position: relative;
   min-height: 100svh;
@@ -146,15 +129,15 @@ select {
   background-image:
     linear-gradient(
       90deg,
-      rgba(9, 9, 13, 0.82) 0%,
-      rgba(9, 9, 13, 0.58) 28%,
-      rgba(9, 9, 13, 0.22) 55%,
+      rgba(9, 9, 13, 0.78) 0%,
+      rgba(9, 9, 13, 0.52) 28%,
+      rgba(9, 9, 13, 0.22) 56%,
       rgba(9, 9, 13, 0.42) 100%
     ),
     linear-gradient(
       180deg,
       rgba(9, 9, 13, 0.12) 0%,
-      rgba(9, 9, 13, 0.32) 62%,
+      rgba(9, 9, 13, 0.30) 62%,
       rgba(9, 9, 13, 0.9) 100%
     ),
     url("/assets/images/fuji.jpg");
@@ -167,7 +150,7 @@ select {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 74% 58%, rgba(244, 193, 169, 0.14), transparent 18%),
+    radial-gradient(circle at 74% 58%, rgba(244, 193, 169, 0.12), transparent 18%),
     radial-gradient(circle at 32% 22%, rgba(226, 140, 115, 0.08), transparent 22%);
   pointer-events: none;
 }
@@ -195,8 +178,8 @@ select {
 }
 
 .hero-copy {
-  max-width: min(760px, 62vw);
-  margin-left: clamp(16px, 6vw, 88px);
+  max-width: min(860px, 58vw);
+  margin-left: clamp(80px, 11vw, 190px);
 }
 
 .eyebrow {
@@ -230,7 +213,7 @@ select {
 
 .hero-intro {
   margin: 22px 0 0;
-  max-width: 700px;
+  max-width: 720px;
   font-size: 1.06rem;
   color: rgba(247, 239, 232, 0.9);
 }
@@ -268,10 +251,7 @@ select {
   }
 }
 
-/* =========================================================
-   SECTIONS
-   ========================================================= */
-
+/* SECTIONS */
 .archive-nav-section,
 .recent-section {
   position: relative;
@@ -280,12 +260,13 @@ select {
 }
 
 .section-heading {
-  max-width: 780px;
+  max-width: 1120px;
   margin-bottom: 32px;
 }
 
 .section-heading h2 {
   margin: 0;
+  max-width: 1120px;
   font-family: var(--display-font);
   font-size: clamp(2.4rem, 5vw, 4rem);
   line-height: 0.98;
@@ -294,14 +275,12 @@ select {
 
 .section-copy {
   margin: 14px 0 0;
+  max-width: 1080px;
   font-size: 1rem;
   color: var(--text-soft);
 }
 
-/* =========================================================
-   TAB SWITCHER
-   ========================================================= */
-
+/* SWITCHER */
 .archive-switcher {
   padding: 20px;
   border-radius: var(--radius-xl);
@@ -342,38 +321,29 @@ select {
 
 .tab-panel {
   display: none;
-  min-height: 320px;
 }
 
 .tab-panel.is-active {
   display: block;
 }
 
-.tab-panel-grid {
-  display: grid;
-  grid-template-columns: minmax(280px, 1.05fr) minmax(280px, 1fr);
-  gap: 18px;
-}
-
-.tab-panel-copy,
-.competition-list-card,
-.future-panel,
-.ghost-card,
-.coming-soon-overlay-card {
-  height: 100%;
-  padding: 26px;
+.section-card {
+  min-height: 360px;
+  padding: 28px;
   border-radius: var(--radius-lg);
   background: var(--panel);
   border: 1px solid var(--line-soft);
   box-shadow: var(--shadow-md);
-  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.tab-panel-copy h3,
-.competition-list-card h3,
-.future-panel h3,
-.ghost-card h3,
-.coming-soon-overlay-card h3 {
+.section-card-main {
+  max-width: 900px;
+}
+
+.section-card-main h3 {
   margin: 0 0 10px;
   font-family: var(--display-font);
   font-size: 2rem;
@@ -381,17 +351,25 @@ select {
   color: var(--text-strong);
 }
 
-.tab-panel-copy p,
-.competition-list-card p,
-.future-panel p,
-.ghost-card p,
-.coming-soon-overlay-card p {
+.section-card-main p {
   margin: 0;
+  max-width: 900px;
   color: var(--text-soft);
 }
 
+.section-card-divider {
+  margin: 22px 0 20px;
+  height: 1px;
+  background: rgba(244, 193, 169, 0.12);
+}
+
+.section-card-bottom {
+  display: grid;
+  gap: 12px;
+}
+
 .panel-label {
-  margin: 0 0 10px;
+  margin: 0;
   font-size: 0.78rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -411,29 +389,30 @@ select {
   transform: translateX(2px);
 }
 
-/* Current competition list */
+.disabled-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: rgba(244, 193, 169, 0.72);
+  font-weight: 700;
+  opacity: 0.9;
+  cursor: default;
+  pointer-events: none;
+}
+
 .competition-list {
-  list-style: none;
+  list-style: disc;
   margin: 0;
-  padding: 0;
+  padding-left: 22px;
   display: grid;
-  gap: 14px;
+  gap: 10px;
 }
 
 .competition-list li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 16px 18px;
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(244, 193, 169, 0.08);
+  color: var(--text-main);
 }
 
 .competition-list a {
   color: var(--text-main);
-  font-weight: 600;
   transition: 180ms ease;
 }
 
@@ -441,66 +420,14 @@ select {
   color: var(--warm-100);
 }
 
-.competition-pill {
-  display: inline-flex;
-  align-items: center;
-  border-radius: 999px;
-  padding: 7px 10px;
-  background: rgba(244, 193, 169, 0.08);
-  border: 1px solid rgba(244, 193, 169, 0.12);
-  color: var(--warm-100);
-  font-size: 0.8rem;
-  white-space: nowrap;
+.muted-list span {
+  color: var(--text-soft);
 }
 
-.competition-note {
-  margin-top: 16px !important;
-  color: var(--text-muted) !important;
-}
-
-/* Coming soon blurred tabs */
-.coming-soon-panel {
-  position: relative;
-  min-height: 320px;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--line-soft);
-  background:
-    linear-gradient(180deg, rgba(22, 20, 26, 0.84), rgba(15, 14, 19, 0.88));
-  box-shadow: var(--shadow-md);
-}
-
-.coming-soon-preview {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  padding: 18px;
-  filter: blur(10px);
-  opacity: 0.46;
-  transform: scale(1.03);
-}
-
-.ghost-card {
-  background: rgba(255, 255, 255, 0.025);
-}
-
-.coming-soon-overlay-card {
-  position: relative;
-  z-index: 2;
-  width: min(520px, calc(100% - 36px));
-  margin: 18px;
-  background: rgba(14, 13, 19, 0.82);
-}
-
-/* =========================================================
-   RECENT ENTRIES
-   ========================================================= */
-
+/* RECENT */
 .recent-grid {
   display: grid;
-  gap: 18px;
+  gap: 24px;
 }
 
 .recent-grid-two {
@@ -508,17 +435,16 @@ select {
 }
 
 .entry-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 380px;
-  padding: 24px;
+  min-height: 430px;
+  padding: 30px;
   border-radius: var(--radius-lg);
   background:
     linear-gradient(180deg, rgba(23, 21, 28, 0.94), rgba(16, 15, 20, 0.94));
   border: 1px solid var(--line-soft);
   box-shadow: var(--shadow-md);
   transition: 200ms ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .entry-card:hover {
@@ -537,8 +463,8 @@ select {
   border-radius: 999px;
   background: rgba(244, 193, 169, 0.08);
   border: 1px solid rgba(244, 193, 169, 0.12);
-  padding: 8px 10px;
-  font-size: 0.78rem;
+  padding: 8px 12px;
+  font-size: 0.82rem;
   color: var(--warm-100);
 }
 
@@ -553,10 +479,12 @@ select {
 .entry-card p {
   margin: 14px 0 0;
   color: var(--text-soft);
+  max-width: none;
 }
 
 .entry-footer {
-  margin-top: 24px;
+  margin-top: auto;
+  padding-top: 30px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -567,53 +495,7 @@ select {
   color: var(--text-muted);
 }
 
-/* =========================================================
-   FOOTER
-   Kept for subpages only. Homepage now has no footer markup.
-   ========================================================= */
-
-.site-footer {
-  border-top: 1px solid rgba(244, 193, 169, 0.08);
-  padding: 28px 0 40px;
-  background: rgba(12, 11, 16, 0.72);
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  align-items: flex-end;
-}
-
-.footer-name {
-  margin: 0;
-  font-weight: 700;
-  color: var(--text-strong);
-}
-
-.footer-copy {
-  margin: 6px 0 0;
-  color: var(--text-muted);
-}
-
-.footer-links {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  color: var(--text-soft);
-}
-
-.footer-links a:hover {
-  color: var(--warm-100);
-}
-
-/* =========================================================
-   GENERIC PAGE HEADER / SUBPAGES
-   ========================================================= */
-
+/* SUBPAGES */
 .page-shell {
   padding-top: 130px;
   padding-bottom: 90px;
@@ -650,7 +532,7 @@ select {
 }
 
 .page-hero p {
-  max-width: 760px;
+  max-width: 1080px;
   margin: 14px 0 0;
   color: var(--text-soft);
 }
@@ -661,7 +543,7 @@ select {
 
 .panel-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1fr;
   gap: 18px;
 }
 
@@ -671,7 +553,8 @@ select {
 .competition-card,
 .article-card,
 .template-note,
-.content-panel {
+.content-panel,
+.full-width-panel {
   padding: 24px;
   border-radius: var(--radius-lg);
   background: var(--panel);
@@ -685,7 +568,8 @@ select {
 .competition-card h2,
 .article-card h2,
 .template-note h2,
-.content-panel h2 {
+.content-panel h2,
+.full-width-panel h2 {
   margin: 0 0 10px;
   font-family: var(--display-font);
   font-size: 2rem;
@@ -699,16 +583,18 @@ select {
 .competition-card p,
 .article-card p,
 .template-note p,
-.content-panel p {
+.content-panel p,
+.full-width-panel p {
   margin: 0;
   color: var(--text-soft);
 }
 
 .track-grid,
 .competition-grid,
-.article-grid {
+.article-grid,
+.category-stack {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 18px;
 }
 
@@ -743,21 +629,11 @@ select {
   font-size: 0.82rem;
 }
 
-/* =========================================================
-   ARTICLE / WRITEUP PAGE
-   ========================================================= */
-
+/* WRITEUP PAGES */
 .writeup-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 18px;
-}
-
-.writeup-intro {
-  padding: 24px;
-  border-radius: var(--radius-lg);
-  background: var(--panel);
-  border: 1px solid var(--line-soft);
 }
 
 .writeup-meta {
@@ -839,10 +715,7 @@ select {
   font-weight: 700;
 }
 
-/* =========================================================
-   REVEAL ANIMATION
-   ========================================================= */
-
+/* REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -872,23 +745,20 @@ select {
   transition-delay: 320ms;
 }
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
+/* REMOVE FOOTERS GLOBALLY */
+.site-footer {
+  display: none;
+}
 
-@media (max-width: 1000px) {
-  .tab-panel-grid,
-  .panel-grid,
-  .track-grid,
-  .competition-grid,
-  .article-grid,
-  .recent-grid-two {
-    grid-template-columns: 1fr;
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .hero-copy {
+    max-width: min(860px, 70vw);
+    margin-left: clamp(32px, 6vw, 72px);
   }
 
-  .hero-copy {
-    max-width: min(760px, 78vw);
-    margin-left: clamp(12px, 4vw, 28px);
+  .recent-grid-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -896,6 +766,12 @@ select {
   .hero {
     background-size: cover;
     background-position: center center;
+  }
+}
+
+@media (max-width: 900px) {
+  .recent-grid-two {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -952,19 +828,12 @@ select {
   .article-card,
   .template-note,
   .content-panel,
-  .writeup-intro,
+  .full-width-panel,
   .prose,
   .archive-switcher,
   .entry-card,
-  .tab-panel-copy,
-  .competition-list-card,
-  .ghost-card,
-  .coming-soon-overlay-card {
+  .section-card {
     padding: 20px;
-  }
-
-  .coming-soon-preview {
-    grid-template-columns: 1fr;
   }
 
   .footer-inner {
@@ -1005,10 +874,5 @@ select {
   .track-card h3,
   .competition-card h3 {
     font-size: 1.55rem;
-  }
-
-  .competition-list li {
-    flex-direction: column;
-    align-items: flex-start;
   }
 }
