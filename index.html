@@ -3,185 +3,261 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>D7YC | Cybersecurity Portfolio</title>
-  <meta name="description" content="Cybersecurity portfolio and CTF writeups by D7YC." />
+  <title>D7YC | Casefile Entrance</title>
+  <meta name="description" content="Cybersecurity student portfolio featuring CTF writeups, learning notes, and challenge breakdowns." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css" />
 </head>
-<body>
-  <div class="bg-glow bg-glow-1"></div>
-  <div class="bg-glow bg-glow-2"></div>
+<body class="home-body">
+  <div class="noise"></div>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
 
-  <div class="page-shell">
-    <aside class="sidebar-card">
-      <div class="avatar-wrap">
-        <div class="avatar-ring"></div>
-        <img
-          class="avatar"
-          src="https://avatars.githubusercontent.com/u/1?v=4"
-          alt="Profile picture"
-        />
-      </div>
+  <header class="topbar">
+    <a href="/" class="brand">D7YC</a>
+    <nav class="topnav">
+      <a href="#introduction">About</a>
+      <a href="#archive-preview">Archive</a>
+      <a href="/writeups/">Writeups</a>
+    </nav>
+  </header>
 
-      <div class="profile-block">
-        <p class="tag">CYBERSECURITY PORTFOLIO</p>
-        <h1>D7YC</h1>
-        <p class="role">Cybersecurity Student</p>
-        <p class="intro">
-          I write CTF writeups, document learning progress, and build practical skills
-          in web exploitation, digital forensics, OSINT, and basic reverse engineering.
-        </p>
-      </div>
+  <main>
+    <section class="hero-casefile">
+      <div class="hero-overlay"></div>
 
-      <div class="profile-meta">
-        <div class="meta-item">
-          <span class="meta-label">Focus</span>
-          <span class="meta-value">CTF Writeups</span>
+      <div class="hero-shell">
+        <div class="case-tag reveal">
+          <span class="case-dot"></span>
+          Personal Archive / Cybersecurity Portfolio
         </div>
-        <div class="meta-item">
-          <span class="meta-label">Interests</span>
-          <span class="meta-value">Web / Forensics / OSINT</span>
+
+        <div class="hero-grid">
+          <div class="hero-left reveal reveal-delay-1">
+            <p class="eyebrow">Casefile Entrance</p>
+            <h1 class="hero-name">D7YC</h1>
+            <p class="hero-role">Cybersecurity Student</p>
+
+            <p class="hero-summary">
+              I document my growth through CTF writeups, learning notes, and challenge
+              breakdowns. This space is built as a personal archive — a record of how I
+              think, investigate, and improve over time.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#introduction">Open Casefile</a>
+              <a class="btn btn-secondary" href="/writeups/">Go to Archive</a>
+            </div>
+          </div>
+
+          <aside class="hero-right reveal reveal-delay-2">
+            <div class="profile-card">
+              <div class="profile-card-header">
+                <span class="mini-label">Subject</span>
+                <span class="mini-status">Active</span>
+              </div>
+
+              <div class="profile-avatar-wrap">
+                <img
+                  src="https://avatars.githubusercontent.com/u/1?v=4"
+                  alt="Profile avatar"
+                  class="profile-avatar"
+                />
+              </div>
+
+              <div class="profile-details">
+                <div class="detail-row">
+                  <span class="detail-label">Focus</span>
+                  <span class="detail-value">CTF Writeups</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Current Strength</span>
+                  <span class="detail-value">Forensics</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Tracks</span>
+                  <span class="detail-value">Web / OSINT / Reverse / Pwn</span>
+                </div>
+              </div>
+
+              <div class="profile-links">
+                <a href="https://github.com/D7YC" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="mailto:your-email@example.com">Email</a>
+              </div>
+            </div>
+          </aside>
         </div>
-        <div class="meta-item">
-          <span class="meta-label">Status</span>
-          <span class="meta-value">Learning & Building</span>
+
+        <a href="#introduction" class="scroll-indicator reveal reveal-delay-3" aria-label="Scroll down">
+          <span>Scroll to enter</span>
+          <span class="scroll-line"></span>
+        </a>
+      </div>
+    </section>
+
+    <section id="introduction" class="section intro-section">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Introduction</p>
+          <h2>This portfolio is meant to feel like an organized archive, not a content dump.</h2>
         </div>
-      </div>
 
-      <div class="sidebar-actions">
-        <a href="#featured" class="btn btn-primary">View Featured Writeups</a>
-        <a href="writeups/index.html" class="btn btn-secondary">Browse All Writeups</a>
-      </div>
+        <div class="intro-grid">
+          <div class="info-panel reveal reveal-delay-1">
+            <p>
+              Instead of showing everything at once, this site reveals my work in stages.
+              The first view introduces me. The next sections open into my archive of writeups,
+              notes, and challenge breakdowns.
+            </p>
+            <p>
+              My current strongest area is digital forensics, but I am building toward a wider
+              range of categories including web, OSINT, reverse engineering, and pwn.
+            </p>
+          </div>
 
-      <div class="social-links">
-        <a href="https://github.com/D7YC" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="mailto:your-email@example.com">Email</a>
-      </div>
-    </aside>
-
-    <main class="main-content">
-      <section class="hero-panel">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-          <p class="hero-kicker">WELCOME TO MY PORTFOLIO</p>
-          <h2>CTF writeups, notes, and practical cybersecurity learning.</h2>
-          <p class="hero-text">
-            This site is where I collect selected writeups, challenge breakdowns,
-            and technical notes in a cleaner and more readable format than plain repositories.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="writeups/index.html" class="btn btn-primary">Open Writeups</a>
-            <a href="#categories" class="btn btn-secondary">See Categories</a>
+          <div class="info-panel muted-panel reveal reveal-delay-2">
+            <p class="panel-label">What is inside</p>
+            <ul class="clean-list">
+              <li>CTF writeups</li>
+              <li>Learning notes</li>
+              <li>Challenge breakdowns</li>
+              <li>Documented progress as a cybersecurity student</li>
+            </ul>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="content-section" id="featured">
-        <div class="section-header">
-          <p class="section-tag">HIGHLIGHTS</p>
-          <h3>Featured Writeups</h3>
+    <section id="archive-preview" class="section archive-preview-section">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Archive Preview</p>
+          <h2>Selected casefiles</h2>
           <p class="section-subtext">
-            Start here if you want to see the kind of work I enjoy the most.
+            This section previews the archive before you move into the full categorized collection.
           </p>
         </div>
 
-        <div class="card-grid">
-          <article class="content-card">
-            <span class="card-type">Forensics</span>
-            <h4>Windows Event Log Investigation</h4>
+        <div class="featured-stack">
+          <article class="feature-card large reveal reveal-delay-1">
+            <div class="feature-meta">
+              <span class="case-label">Casefile 001</span>
+              <span class="case-type">Forensics</span>
+            </div>
+            <h3>Windows Event Log Investigation</h3>
             <p>
-              Basic analysis workflow for reviewing suspicious activity using logs,
-              timestamps, and host artifacts.
+              A structured writeup for investigating suspicious activity using logs,
+              timestamps, and system traces. This is a placeholder casefile for your
+              first real forensic writeup.
             </p>
-            <a href="writeups/index.html">Read more →</a>
+            <a href="/writeups/forensics.html" class="inline-link">Open casefile →</a>
           </article>
 
-          <article class="content-card">
-            <span class="card-type">Web</span>
-            <h4>SQL Injection Beginner Walkthrough</h4>
-            <p>
-              A simple breakdown of how I approached a basic SQLi challenge,
-              including payload testing and reasoning.
-            </p>
-            <a href="writeups/index.html">Read more →</a>
-          </article>
+          <div class="feature-grid">
+            <article class="feature-card reveal reveal-delay-2">
+              <div class="feature-meta">
+                <span class="case-label">Casefile 002</span>
+                <span class="case-type">Notes</span>
+              </div>
+              <h3>Investigation Workflow Notes</h3>
+              <p>
+                A place to keep repeatable thinking patterns, useful tools, and
+                investigation habits learned through practice.
+              </p>
+              <a href="/writeups/notes.html" class="inline-link">Open notes →</a>
+            </article>
 
-          <article class="content-card">
-            <span class="card-type">OSINT</span>
-            <h4>Image Clues and Metadata Trail</h4>
-            <p>
-              A short writeup on extracting small clues from images, profiles,
-              and public information during an OSINT task.
-            </p>
-            <a href="writeups/index.html">Read more →</a>
-          </article>
+            <article class="feature-card reveal reveal-delay-3">
+              <div class="feature-meta">
+                <span class="case-label">Casefile 003</span>
+                <span class="case-type">Archive</span>
+              </div>
+              <h3>Browse All Categories</h3>
+              <p>
+                Enter the full archive to browse writeups by category and expand into
+                deeper collections over time.
+              </p>
+              <a href="/writeups/" class="inline-link">Enter archive →</a>
+            </article>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="content-section" id="categories">
-        <div class="section-header">
-          <p class="section-tag">STRUCTURE</p>
-          <h3>Writeup Categories</h3>
+    <section class="section category-preview-section">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Classification</p>
+          <h2>Current archive structure</h2>
           <p class="section-subtext">
-            My writeups will be grouped to make browsing easier.
+            Designed to grow with you. Even if only forensics is active now, the structure is already ready for expansion.
           </p>
         </div>
 
         <div class="category-grid">
-          <a class="category-card" href="writeups/index.html">
+          <a class="category-card reveal reveal-delay-1" href="/writeups/forensics.html">
             <span class="category-number">01</span>
-            <h4>Web Exploitation</h4>
-            <p>XSS, SQLi, auth flaws, parameter tampering, and web challenge notes.</p>
+            <h3>Forensics</h3>
+            <p>Disk images, logs, deleted artifacts, browser traces, and host-based investigations.</p>
           </a>
 
-          <a class="category-card" href="writeups/index.html">
+          <a class="category-card reveal reveal-delay-2" href="/writeups/web.html">
             <span class="category-number">02</span>
-            <h4>Digital Forensics</h4>
-            <p>Disk image analysis, event logs, timeline review, and artifact extraction.</p>
+            <h3>Web</h3>
+            <p>Web challenge notes, application testing, request tampering, and common exploit logic.</p>
           </a>
 
-          <a class="category-card" href="writeups/index.html">
+          <a class="category-card reveal reveal-delay-3" href="/writeups/osint.html">
             <span class="category-number">03</span>
-            <h4>OSINT</h4>
-            <p>Public-source investigation, metadata clues, usernames, and image tracing.</p>
+            <h3>OSINT</h3>
+            <p>Open-source investigations, metadata clues, identity trails, and public information pivots.</p>
           </a>
 
-          <a class="category-card" href="writeups/index.html">
+          <a class="category-card reveal reveal-delay-1" href="/writeups/reverse.html">
             <span class="category-number">04</span>
-            <h4>Crypto / Misc</h4>
-            <p>Small decoding, scripting, puzzle-based, and miscellaneous CTF challenges.</p>
+            <h3>Reverse</h3>
+            <p>Binary inspection, deobfuscation, challenge reasoning, and reverse engineering notes.</p>
+          </a>
+
+          <a class="category-card reveal reveal-delay-2" href="/writeups/pwn.html">
+            <span class="category-number">05</span>
+            <h3>Pwn</h3>
+            <p>Memory corruption learning, exploitation basics, and challenge attempts as skills grow.</p>
+          </a>
+
+          <a class="category-card reveal reveal-delay-3" href="/writeups/notes.html">
+            <span class="category-number">06</span>
+            <h3>Notes</h3>
+            <p>Learning notes, breakdowns, and recurring technical lessons collected along the way.</p>
           </a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="content-section">
-        <div class="section-header">
-          <p class="section-tag">ABOUT</p>
-          <h3>What this site is for</h3>
-        </div>
-
-        <div class="about-panel">
+    <section class="section closing-section">
+      <div class="section-shell">
+        <div class="closing-panel reveal">
+          <p class="eyebrow">Closing Note</p>
+          <h2>This portfolio is not just a showcase. It is a record of progress.</h2>
           <p>
-            I made this portfolio to present my CTF learning in a cleaner way.
-            Instead of showing only raw GitHub repositories, this website helps me
-            organize writeups, explain my thought process, and show what I learned
-            from each challenge.
+            Over time, each new casefile will make the archive more complete. For now,
+            the structure is already in place so the site can grow naturally with my
+            work and learning.
           </p>
-          <p>
-            Over time, I plan to keep adding more writeups, notes, and selected
-            technical mini-projects related to cybersecurity.
-          </p>
+          <a class="btn btn-primary" href="/writeups/">Open Full Archive</a>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
 
-      <footer class="site-footer">
-        <p>© 2026 D7YC • Built with GitHub Pages</p>
-      </footer>
-    </main>
-  </div>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> D7YC • GitHub Pages Portfolio</p>
+  </footer>
+
+  <script src="/script.js"></script>
 </body>
 </html>
