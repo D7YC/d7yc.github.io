@@ -175,7 +175,7 @@ select {
 
 .hero-copy {
   max-width: min(980px, 72vw);
-  margin-left: clamp(110px, 13vw, 220px);
+  margin-left: clamp(48px, 8vw, 120px);
 }
 
 .eyebrow {
