@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Log Timeline Reconstruction | Ong Ping Xiang</title>
+  <meta
+    name="description"
+    content="Sample forensic writeup page by Ong Ping Xiang."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header is-scrolled" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">Ong Ping Xiang</a>
+      <nav class="header-nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <div class="container writeup-layout">
+      <div class="page-hero reveal is-visible">
+        <div class="breadcrumbs">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/ctf-writeups/">CTF Writeups</a>
+          <span>/</span>
+          <a href="/ctf-writeups/nexsec-ctf-2025/">NexSec CTF 2025</a>
+          <span>/</span>
+          <span>Event Log Timeline Reconstruction</span>
+        </div>
+
+        <p class="eyebrow">Writeup</p>
+        <h1>Event Log Timeline Reconstruction</h1>
+        <p>
+          This sample page demonstrates the writeup structure. Replace the text below with
+          your real challenge details, screenshots, commands, and lessons learned.
+        </p>
+
+        <div class="writeup-meta">
+          <span>Forensics</span>
+          <span>NexSec CTF 2025</span>
+          <span>Sample template</span>
+        </div>
+      </div>
+
+      <article class="prose reveal is-visible">
+        <h2>Overview</h2>
+        <p>
+          The goal of this challenge was to reconstruct a meaningful sequence of actions from
+          system evidence and identify the key event that answered the flag question.
+        </p>
+
+        <h3>Initial observation</h3>
+        <p>
+          I started by identifying what artifacts were available and what kind of timeline the
+          challenge seemed to require.
+        </p>
+
+        <h3>Approach</h3>
+        <ol>
+          <li>Review the prompt and identify the type of evidence likely to matter.</li>
+          <li>Inspect the event logs and isolate the most relevant sources.</li>
+          <li>Build a chronological view of meaningful events.</li>
+          <li>Cross-check timestamps before concluding anything.</li>
+          <li>Extract the final answer only after the timeline made sense.</li>
+        </ol>
+
+        <h3>Takeaway</h3>
+        <p>
+          The main lesson from this kind of challenge is that forensic analysis becomes much
+          easier once the evidence is arranged as a timeline rather than treated as isolated entries.
+        </p>
+
+        <a class="back-link" href="/ctf-writeups/nexsec-ctf-2025/">
+          ← Back to writeup list
+        </a>
+      </article>
+    </div>
+  </main>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
