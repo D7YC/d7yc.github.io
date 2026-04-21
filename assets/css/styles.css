@@ -820,4 +820,19 @@ select {
   .simple-card h3 {
     font-size: 1.55rem;
   }
+
+/* hero position override */
+.hero-copy {
+  max-width: min(1100px, 78vw) !important;
+  margin-left: 28px !important;
+}
+
+.hero-title {
+  white-space: nowrap !important;
+}
+
+.hero-intro {
+  max-width: 980px !important;
+}
+  
 }
