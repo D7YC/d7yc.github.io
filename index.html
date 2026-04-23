@@ -232,50 +232,193 @@
           </p>
         </div>
 
-        <div class="recent-grid">
+        <div class="recent-grid" id="recent-grid">
           <article class="entry-card reveal reveal-delay-1">
             <div class="entry-meta">
-              <span>Forensics</span>
+              <span>Loading</span>
             </div>
 
-            <h3>Event Log Timeline Reconstruction</h3>
+            <h3>Loading recent writeups...</h3>
 
             <p>
-              A sample forensics writeup page that demonstrates how a single challenge can be
-              documented clearly inside the portfolio structure.
+              The homepage is retrieving the latest challenge cards from your recent competition pages.
             </p>
 
             <div class="entry-footer">
-              <span class="entry-subtle">NexSec CTF 2025</span>
-              <a class="text-link" href="/ctf-writeups/nexsec-ctf-2025/event-log-timeline.html">
-                Read writeup →
-              </a>
-            </div>
-          </article>
-
-          <article class="entry-card reveal reveal-delay-2">
-            <div class="entry-meta">
-              <span>Forensics</span>
-            </div>
-
-            <h3>Browser Trail Review</h3>
-
-            <p>
-              A second sample entry showing how another challenge can sit below the first one
-              without making the homepage feel crowded.
-            </p>
-
-            <div class="entry-footer">
-              <span class="entry-subtle">IBOH 2025</span>
-              <a class="text-link" href="/ctf-writeups/iboh-2025/browser-trail-review.html">
-                Read writeup →
-              </a>
+              <span class="entry-subtle">Please wait</span>
             </div>
           </article>
         </div>
+
+        <noscript>
+          <div class="recent-grid">
+            <article class="entry-card">
+              <div class="entry-meta">
+                <span>Forensics</span>
+              </div>
+              <h3>Enable JavaScript to load recent writeups</h3>
+              <p>
+                This section reads the latest challenge cards directly from your competition pages.
+              </p>
+              <div class="entry-footer">
+                <span class="entry-subtle">Homepage fallback</span>
+                <a class="text-link" href="/ctf-writeups/">Open CTF section →</a>
+              </div>
+            </article>
+          </div>
+        </noscript>
       </div>
     </section>
   </main>
+
+  <script>
+    const recentCompetitions = [
+      {
+        url: "/ctf-writeups/nexsec-ctf-2025/",
+        name: "NexSec CTF 2025"
+      },
+      {
+        url: "/ctf-writeups/iboh-2025/",
+        name: "IBOH 2025"
+      }
+    ];
+
+    function getEntryDescription(entryCard) {
+      const paragraphs = Array.from(entryCard.querySelectorAll("p"));
+      return (
+        paragraphs.find((p) => !p.closest(".entry-footer"))?.textContent.trim() ||
+        "Writeup available in this competition."
+      );
+    }
+
+    function normalizeHref(href, baseUrl) {
+      if (!href) return baseUrl;
+      try {
+        return new URL(href, window.location.origin).href;
+      } catch (error) {
+        return baseUrl;
+      }
+    }
+
+    async function fetchLatestEntryFromCompetition(competition, index) {
+      try {
+        const response = await fetch(competition.url, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error("Failed to fetch competition page");
+        }
+
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+
+        const entryCard = doc.querySelector(".list-stack .entry-card");
+        if (!entryCard) {
+          throw new Error("No entry card found");
+        }
+
+        const category =
+          entryCard.querySelector(".entry-meta span")?.textContent.trim() || "Writeup";
+
+        const title =
+          entryCard.querySelector("h3")?.textContent.trim() || competition.name;
+
+        const description = getEntryDescription(entryCard);
+
+        const competitionName =
+          entryCard.querySelector(".entry-subtle")?.textContent.trim() || competition.name;
+
+        const linkEl = entryCard.querySelector(".entry-footer a");
+        const linkText = linkEl?.textContent.trim() || "Read writeup →";
+        const linkHref = normalizeHref(linkEl?.getAttribute("href"), competition.url);
+
+        return {
+          category,
+          title,
+          description,
+          competitionName,
+          linkText,
+          linkHref,
+          delayClass: `reveal-delay-${Math.min(index + 1, 4)}`
+        };
+      } catch (error) {
+        return {
+          category: "Writeup",
+          title: competition.name,
+          description: "Unable to load the latest writeup card from this competition page right now.",
+          competitionName: competition.name,
+          linkText: "Open competition →",
+          linkHref: competition.url,
+          delayClass: `reveal-delay-${Math.min(index + 1, 4)}`
+        };
+      }
+    }
+
+    function createRecentCard(entry) {
+      const article = document.createElement("article");
+      article.className = `entry-card reveal is-visible ${entry.delayClass}`;
+
+      const entryMeta = document.createElement("div");
+      entryMeta.className = "entry-meta";
+
+      const metaSpan = document.createElement("span");
+      metaSpan.textContent = entry.category;
+      entryMeta.appendChild(metaSpan);
+
+      const title = document.createElement("h3");
+      title.textContent = entry.title;
+
+      const description = document.createElement("p");
+      description.textContent = entry.description;
+
+      const footer = document.createElement("div");
+      footer.className = "entry-footer";
+
+      const subtle = document.createElement("span");
+      subtle.className = "entry-subtle";
+      subtle.textContent = entry.competitionName;
+
+      const link = document.createElement("a");
+      link.className = "text-link";
+      link.href = entry.linkHref;
+      link.textContent = entry.linkText;
+
+      if (/^https?:\/\//i.test(entry.linkHref)) {
+        const entryUrl = new URL(entry.linkHref);
+        if (entryUrl.origin !== window.location.origin) {
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+        }
+      }
+
+      footer.appendChild(subtle);
+      footer.appendChild(link);
+
+      article.appendChild(entryMeta);
+      article.appendChild(title);
+      article.appendChild(description);
+      article.appendChild(footer);
+
+      return article;
+    }
+
+    async function loadRecentEntries() {
+      const recentGrid = document.getElementById("recent-grid");
+      if (!recentGrid) return;
+
+      const entries = await Promise.all(
+        recentCompetitions.map((competition, index) =>
+          fetchLatestEntryFromCompetition(competition, index)
+        )
+      );
+
+      recentGrid.innerHTML = "";
+      entries.forEach((entry) => {
+        recentGrid.appendChild(createRecentCard(entry));
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadRecentEntries);
+  </script>
 
   <script src="/assets/js/main.js"></script>
 </body>
